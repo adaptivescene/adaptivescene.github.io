@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="From Motion Tracking to Versatile Humanoid Control via Guided Diffusion">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Multi-Modal Manipulation via Representation-Specific Policy Composition</title>
+  <title>Multi-Modal Manipulation via Multi-Modal Policy Consensus</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -28,7 +28,7 @@
   <section class="hero is-link is-fullheight video" style="overflow: hidden; position:relative;">
     <div class="hero-video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 101%; height: 101%;">
       <video playsinline autoplay muted loop style="width: 100%; height: 100%; object-fit: cover;">
-        <source src=" ./static/videos/teaser.mp4" type="video/mp4">
+        <source src=" ./static/videos/4k_compressed.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero-video is-hidden-tablet is-inline-block-mobile"
@@ -55,7 +55,7 @@
               </span>
               <span>arXiv</span>
             </a>
-            <a href="https://youtu.be/RS_MtKVIAzY" class="navbar-item pl-4 pr-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
+            <a href="https://www.youtube.com/watch?v=VnQeGtv5fkc" class="navbar-item pl-4 pr-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
               <span class="icon" style="margin-right:5px;">
                 <i class="fab fa-youtube"></i>
               </span>
@@ -80,7 +80,7 @@
       <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 9rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
       </h1>
       <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 3.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
-        Multi-Modal Manipulation via Representation-Specific Policy Composition
+        Multi-Modal Manipulation via Multi-Modal Policy Consensus
       </h1>
       <p style="font-size: 1.5rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">
         <a >Author names omitted for double-blind review<sup></sup></a>
@@ -104,7 +104,7 @@
       <div class="column is-half">
         <h2 class="title is-2">Video</h2>
         <div class="publication-video" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-          <iframe src="https://www.youtube.com/embed/RS_MtKVIAzY"
+          <iframe src="https://www.youtube.com/embed/VnQeGtv5fkc?si=JTWCyc2NMlWusp25"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
                   allowfullscreen
@@ -114,8 +114,8 @@
       <div class="column is-half">
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
-          <p class="abstract-text" style="font-size: 0.95rem; line-height: 1.5;">
-            Feature-level fusion, the dominant approach for multimodal robot learning, fails in real-world scenarios with modality imbalance, where uninformative but dominant modalities like vision can overwhelm sparse but critical signals like tactile feedback. We introduce a framework that factorizes multimodal policies into representation-specific diffusion models, formulated as a product of specialized distributions for each sensory modality. A learned router network adaptively weighs each representation's influence based on context. We evaluate our approach on manipulation tasks in RLBench simulation and real-world environments. Our method significantly outperforms feature-fusion baselines on tasks requiring multimodal reasoning or representation switching—including occluded object picking, in-hand spoon reorientation, and puzzle insertion. We demonstrate robustness to physical perturbations and sensor corruption and show that our policy adaptively shifts between representations, such as transitioning from vision to touch when entering occluded spaces.
+          <p class="abstract-text" style="font-size: 1.1rem; line-height: 1.5;">
+            Feature-level fusion, the dominant approach for multimodal robot learning, fails in real-world scenarios with modality imbalance, where uninformative but dominant modalities like vision can overwhelm sparse but critical signals like tactile feedback.<strong> We introduce a framework that factorizes multimodal policies into representation-specific diffusion models, formulated as a product of specialized distributions for each sensory modality</strong>. A learned router network adaptively weighs each representation's influence based on context. We evaluate our approach on manipulation tasks in <strong>RLBench simulation and real-world environments</strong>. Our method significantly outperforms feature-fusion baselines on tasks requiring multimodal reasoning or representation switching—including occluded object picking, in-hand spoon reorientation, and puzzle insertion. We demonstrate <strong>robustness to physical perturbations and sensor corruption</strong> and show that our policy <strong>adaptively shifts between representations</strong>, such as transitioning from vision to touch when entering occluded spaces.
           </p>
         </div>
       </div>
@@ -126,16 +126,16 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Our open-source motion tracking pipline can track motion stably and repeatably</h2>
+    <h2 class="title is-2" style="text-align: center;">Our framework composes representation-specific experts through learned consensus weights</h2>
     <div class="columns is-centered">
       <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2643.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video autoplay loop muted playsinline src="./static/videos/marker_importance_compressed.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
       <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2669.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video autoplay loop muted playsinline src="./static/videos/spoon_importance.MOV" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
         <div class="column is-full-width is-centered has-text-centered">
-        <video autoplay loop muted playsinline src="./static/videos/motion_tracking/prep_IMG_2661.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video autoplay loop muted playsinline src="./static/videos/puzzle_importance_compressed.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
     </div>
   </div>
@@ -143,10 +143,7 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Policies trained with BeyondMimic pipeline on the LAFAN1 Dataset</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      Below are 24 clips from policies trained on 14 distinct ~3-minute sequences, all using <strong>exactly the same MDP setup and hyperparameters<strong></strong>.
-    </p>
+    <h2 class="title is-2" style="text-align: center;">Policies showed robustness to physical perturbation</h2>
     <div id="results-carousel" class="carousel results-carousel">
       <!-- highlights -->
       <div class="column is-full-width is-centered has-text-centered">
