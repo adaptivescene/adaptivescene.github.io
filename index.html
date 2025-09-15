@@ -101,7 +101,7 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p class="abstract-text" style="font-size: 1.0rem; line-height: 1.5;">
-           Effectively integrating diverse sensory representations is crucial for robust robotic manipulation. However, the typical approach of feature concatenation is often suboptimal: dominant modalities such as vision can overwhelm sparse but critical signals like touch in contact-rich tasks, and monolithic architectures cannot flexibly incorporate new or missing modalities without retraining. <strong>Our method factorizes the policy into a set of diffusion models, each specialized for a single representation (e.g., vision or touch), and employs a router network that learns consensus weights to adaptively combine their contributions, enabling incremental integration of new representations</strong>. We evaluate our approach on <strong>real-world tasks</strong> such as occluded object picking, in-hand spoon reorientation, and puzzle insertion, as well as <strong>simulated manipulation tasks in RLBench</strong>, where it significantly outperforms feature-concatenation baselines on scenarios requiring multimodal reasoning. Our policy further demonstrates <strong>robustness to physical perturbations and sensor corruption</strong>. We further conduct perturbation-based importance analysis, which reveals adaptive shifts between modalities, for example transitioning from vision to multi-model when entering occluded spaces
+           Effectively integrating diverse sensory representations is crucial for robust robotic manipulation. However, the typical approach of feature concatenation is often suboptimal: dominant modalities such as vision can overwhelm sparse but critical signals like touch in contact-rich tasks, and monolithic architectures cannot flexibly incorporate new or missing modalities without retraining. <strong>Our method factorizes the policy into a set of diffusion models, each specialized for a single representation (e.g., vision or touch), and employs a router network that learns consensus weights to adaptively combine their contributions, enabling incremental integration of new representations</strong>. We evaluate our approach on real-world tasks such as occluded object picking, in-hand spoon reorientation, and puzzle insertion, as well as simulated manipulation tasks in RLBench, where it significantly outperforms feature-concatenation baselines on scenarios requiring multimodal reasoning. Our policy further demonstrates robustness to physical perturbations and sensor corruption. We further conduct perturbation-based importance analysis, which reveals adaptive shifts between modalities, for example transitioning from vision to multi-model when entering occluded spaces.
           </p>
         </div>
       </div>
@@ -112,7 +112,7 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Our framework composes representation-specific experts through learned consensus weights</h2>
+    <h2 class="title is-2" style="text-align: center;">Perturbation-based importance analysis of representation importance across task stages</h2>
     <div class="columns is-centered">
       <div class="column is-full-width is-centered has-text-centered">
         <video autoplay loop muted playsinline src="./static/videos/marker_importance_compressed.mp4" poster="./static/videos/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
@@ -130,13 +130,15 @@
 <section class="section">
   <div class="container">
     <h2 class="title is-2 has-text-centered">
-      Our policies showed robustness to physical perturbation and sensor corruption
+      Policy robustness under physical perturbations or sensor corruptions
     </h2>
     <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
       The following videos has been X4 accelerated
     </p>
+
+    <!-- Row 1 -->
     <div class="columns is-centered">
-      <div class="column is-one-third has-text-centered">
+      <div class="column is-half has-text-centered">
         <figure class="video-item">
           <video autoplay loop muted playsinline
             src="./static/videos/physical_perturbation/Human_Perturbation_Mosaic_4X_compressed.mp4"
@@ -145,19 +147,22 @@
           </video>
           <figcaption><strong>Runtime Perturbation</strong></figcaption>
         </figure>
-        </div>
-
-      <div class="column is-one-third has-text-centered">
+      </div>
+      <div class="column is-half has-text-centered">
         <figure class="video-item">
           <video autoplay loop muted playsinline
             src="./static/videos/physical_perturbation/Bag_Moving_4X_Mosaic_compressed.mp4"
             poster="./static/videos/loading-icon.gif"
             style="width: 100%; border: 1px solid #bbb; border-radius: 10px;">
           </video>
-        <figcaption><strong>Object Repositioning</strong></figcaption>
+          <figcaption><strong>Object Repositioning</strong></figcaption>
         </figure>
       </div>
-      <div class="column is-one-third has-text-centered">
+    </div>
+
+    <!-- Row 2 -->
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
         <figure class="video-item">
           <video autoplay loop muted playsinline
             src="./static/videos/physical_perturbation/Sensor_Corruption_4X_compressed.mp4"
@@ -167,32 +172,68 @@
           <figcaption><strong>Sensor Corruption</strong></figcaption>
         </figure>
       </div>
-    </div>
-
-    <div class="columns is-centered">
-      <div class="column is-one-third has-text-centered">
+      <div class="column is-half has-text-centered">
         <figure class="video-item">
           <video autoplay loop muted playsinline
             src="./static/videos/physical_perturbation/Puzzle_Human_Perturbation_4X_compressed.mp4"
             poster="./static/videos/loading-icon.gif"
             style="width: 100%; border: 1px solid #bbb; border-radius: 10px;">
           </video>
-          <figcaption><strong>Object Repositioning</strong></figcaption>
+          <figcaption><strong>Puzzle Perturbation</strong></figcaption>
         </figure>
-        </div>
-      <div class="column is-one-third has-text-centered">
+      </div>
+    </div>
+
+    <!-- Row 3 (single video, centered) -->
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
         <figure class="video-item">
           <video autoplay loop muted playsinline
             src="./static/videos/physical_perturbation/Spoon_Human_Perturbation_4X_compressed.mp4"
             poster="./static/videos/loading-icon.gif"
             style="width: 100%; border: 1px solid #bbb; border-radius: 10px;">
           </video>
-          <figcaption><strong> Repositioning + Sensor Corruption</strong></figcaption>
+          <figcaption><strong>Repositioning + Sensor Corruption</strong></figcaption>
         </figure>
       </div>
     </div>
+
   </div>
 </section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered">
+           Composing independently trained policies without retraining
+
+    </h2>
+    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
+      The following videos has been X4 accelerated
+    </p>
+
+    <!-- Row 1 -->
+    <div class="columns is-centered">
+      <div class="column is-half has-text-centered">
+        <figure class="video-item">
+          <video autoplay loop muted playsinline
+            src="./static/videos/incremental/RGB_4X_compressed.mp4"
+            poster="./static/videos/loading-icon.gif"
+            style="width: 100%; border: 1px solid #bbb; border-radius: 10px;">
+          </video>
+          <figcaption><strong>RGB Only  →  <span style="color:red;"> Task Fail</span></strong></figcaption>
+        </figure>
+      </div>
+      <div class="column is-half has-text-centered">
+        <figure class="video-item">
+          <video autoplay loop muted playsinline
+            src="./static/videos/incremental/RGB_TAC_4X_compressed.mp4"
+            poster="./static/videos/loading-icon.gif"
+            style="width: 100%; border: 1px solid #bbb; border-radius: 10px;">
+          </video>
+          <figcaption><strong>Compose RGB and Tactile  →  <span style="color:green;"> Task Success</span></strong></figcaption>
+        </figure>
+      </div>
+    </div>
 
 
 <footer class="footer">
